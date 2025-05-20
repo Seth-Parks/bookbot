@@ -28,3 +28,22 @@ def get_char_count(text_string):
             char_dict[char] = 1
 
     return char_dict
+
+
+def sort_on(dict):
+    return dict['num']
+
+
+def sort_char_dict(char_dict):
+    #In order to sort the dict, we need to first move it into a list
+    sorted_list = []
+    #for each item in the original dict, we want to add new information and
+    #store it in a list to be sorted
+    for key, value in char_dict.items():
+        new_dict = {'char': key, 'num': value}
+        sorted_list.append(new_dict)
+    
+    #sort the list
+    sorted_list.sort(reverse=True, key=sort_on)
+    
+    return sorted_list
